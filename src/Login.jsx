@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export const Login = (props) => {
+export const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -19,7 +20,9 @@ export const Login = (props) => {
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button type="submit">Log In</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
+            <Link to="/Register"><button className="link-btn">Don't have an account? Register here.</button></Link>
+            <Link to="/ForgotPasswordForm"><button className="link-btn">ForgotPassword</button></Link>
+            <Link to="/ChangePasswordForm"><button className="link-btn">ChangePassword</button></Link>
         </div>
     )
 }

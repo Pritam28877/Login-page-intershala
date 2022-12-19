@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ChangePasswordForm(props) {
     const [oldPassword, setOldPassword] = useState('');
@@ -37,7 +38,7 @@ function ChangePasswordForm(props) {
                 <br />
                 <button type="submit">Change Password</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+            <Link to="/"><button className="link-btn" >Already have an account? Login here.</button></Link>
         </div>
     );
 }
